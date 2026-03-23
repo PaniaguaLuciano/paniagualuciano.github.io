@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:research": "node scripts/build-research-docs.mjs"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
+  }
+}
