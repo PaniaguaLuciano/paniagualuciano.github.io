@@ -6,14 +6,12 @@
   <title>Luciano A. Paniagua | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <div class="topbar-inner">
+  <header class="site-header">
+    <nav class="nav container">
       <a class="brand" href="#top">Luciano A. Paniagua</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -21,82 +19,71 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <main id="top" class="page-wrap">
-    <section class="hero chrome-panel">
-      <p class="hero-kicker">Engineering Portfolio 2010 Edition</p>
-      <h1>Power Systems + Machine Learning</h1>
-      <p class="hero-text">
-        Electrical Engineering student at UTEP building forecasting systems, embedded tools,
-        and data-driven solutions for modern energy challenges.
+  <main id="top" class="container">
+    <section class="hero">
+      <p class="eyebrow">Electrical Engineering Student at UTEP</p>
+      <h1>Power Systems, Machine Learning, and Practical Engineering.</h1>
+      <p>
+        I design and evaluate data-driven methods for forecasting, energy analytics,
+        and reliable grid-focused applications.
       </p>
-
       <div class="hero-actions">
-        <a class="btn btn-blue" href="#projects">See Projects</a>
-        <a class="btn btn-orange" href="#contact">Hire / Contact</a>
-      </div>
-
-      <div class="hero-badges">
-        <span>Forecasting</span>
-        <span>Energy Analytics</span>
-        <span>Embedded Systems</span>
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="#contact">Contact</a>
       </div>
     </section>
 
-    <section id="about" class="section-box">
+    <section id="about" class="section">
       <h2>About</h2>
       <p>
         I am an Electrical Engineering student at The University of Texas at El Paso (UTEP)
-        focused on power systems, renewable integration, and uncertainty-aware forecasting.
+        with interests in power systems, renewable integration, probabilistic forecasting,
+        and machine-learning methods for energy research.
       </p>
     </section>
 
-    <section id="research" class="section-box">
+    <section id="research" class="section">
       <h2>Research</h2>
-      <div class="timeline">
+      <div class="list">
         <article>
           <h3>Wind Power Forecasting</h3>
-          <p>Multi-horizon prediction using LSTM, SVR, and hybrid model pipelines.</p>
+          <p>Multi-horizon forecasting with LSTM, SVR, and hybrid model approaches.</p>
         </article>
         <article>
           <h3>Probabilistic Load Forecasting</h3>
-          <p>Gaussian-output recurrent models for demand uncertainty estimation.</p>
+          <p>Gaussian-output sequence models for uncertainty-aware demand prediction.</p>
         </article>
         <article>
           <h3>AI for Grid Operations</h3>
-          <p>Data-driven methods for planning, reliability, and operational decisions.</p>
+          <p>Data-informed decision support for planning, reliability, and operations.</p>
         </article>
       </div>
     </section>
 
-    <section id="projects" class="section-box">
-      <h2>Featured Projects</h2>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
       <div class="card-grid">
-        <article class="project-card">
-          <p class="card-label">Machine Learning</p>
+        <article class="card">
           <h3>Wind Forecasting Suite</h3>
-          <p>Built model-comparison workflows across horizons with reproducible evaluation metrics.</p>
+          <p>Model benchmarking and reproducible workflows for multi-step forecasting tasks.</p>
         </article>
-
-        <article class="project-card">
-          <p class="card-label">Energy Analytics</p>
+        <article class="card">
           <h3>Probabilistic Load Estimator</h3>
-          <p>Implemented sequence models that return calibrated distributions instead of point-only output.</p>
+          <p>Sequence modeling pipeline that outputs calibrated prediction intervals.</p>
         </article>
-
-        <article class="project-card">
-          <p class="card-label">Embedded</p>
+        <article class="card">
           <h3>ESP32 Engineering Tools</h3>
-          <p>Prototyped embedded sensing and Python analysis loops for rapid testing and validation.</p>
+          <p>Embedded sensing and Python analysis loops for rapid experimentation.</p>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section-box">
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Open to internships, collaborations, and applied research opportunities.</p>
+      <p>Open to internships, collaborations, and research opportunities.</p>
       <div class="contact-links">
         <a href="mailto:your-email@example.com">your-email@example.com</a>
         <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a>
@@ -105,7 +92,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="container">
     <p>© 2026 Luciano A. Paniagua</p>
   </footer>
 </body>
