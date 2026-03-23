@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luciano A. Paniagua</title>
+  <title>Luciano A. Paniagua | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
+  <div class="bg-shape shape-a" aria-hidden="true"></div>
+  <div class="bg-shape shape-b" aria-hidden="true"></div>
+
+  <header class="site-header">
     <nav class="navbar">
-      <div class="logo">Luciano A. Paniagua</div>
+      <a class="brand" href="#top">Luciano A. Paniagua</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
@@ -17,54 +23,95 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
-    <div class="hero-content">
-      <h1>Luciano A. Paniagua</h1>
-      <p>Electrical Engineering Student at UTEP</p>
-      <p>Power Systems | Machine Learning | Energy Research</p>
-    </div>
   </header>
 
-  <main>
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        I am an Electrical Engineering student at The University of Texas at El Paso (UTEP)
-        with interests in power systems, machine learning, and energy-focused research.
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Electrical Engineering at UTEP</p>
+      <h1>Building smarter power systems through data, modeling, and real-world engineering.</h1>
+      <p class="hero-text">
+        I work at the intersection of <strong>energy systems</strong>, <strong>machine learning</strong>, and
+        <strong>applied research</strong> to make infrastructure more resilient and efficient.
       </p>
-    </section>
-
-    <section id="research" class="section">
-      <h2>Research</h2>
-      <p>
-        My work includes wind and load forecasting, probabilistic LSTM models,
-        and AI-driven methods for modern power and energy systems.
-      </p>
-    </section>
-
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Wind Power Forecasting</h3>
-          <p>LSTM, SVR, and hybrid forecasting models for multi-horizon prediction.</p>
-        </div>
-        <div class="card">
-          <h3>Probabilistic Load Forecasting</h3>
-          <p>Gaussian-output LSTM models with uncertainty quantification.</p>
-        </div>
-        <div class="card">
-          <h3>Embedded / Technical Projects</h3>
-          <p>ESP32, Python, simulation, and engineering-focused development work.</p>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="#contact">Contact Me</a>
+      </div>
+      <div class="hero-metrics">
+        <article>
+          <h3>Forecasting</h3>
+          <p>Wind and load prediction with probabilistic ML models.</p>
+        </article>
+        <article>
+          <h3>Simulation</h3>
+          <p>Power-system analysis and uncertainty-aware experiments.</p>
+        </article>
+        <article>
+          <h3>Embedded</h3>
+          <p>Hands-on builds with ESP32, Python, and data pipelines.</p>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="about" class="panel section-about">
+      <h2>About</h2>
+      <p>
+        I am an Electrical Engineering student at The University of Texas at El Paso (UTEP), focused on modern
+        power and energy systems. My interests include demand and renewable forecasting, uncertainty quantification,
+        and AI methods that improve operational decision-making.
+      </p>
+    </section>
+
+    <section id="research" class="panel section-research">
+      <h2>Research Focus</h2>
+      <div class="timeline">
+        <article>
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Wind Power Forecasting</h3>
+          <p>Developing multi-horizon models combining LSTM, SVR, and hybrid learning strategies.</p>
+        </article>
+        <article>
+          <span class="dot" aria-hidden="true"></span>
+          <h3>Probabilistic Load Forecasting</h3>
+          <p>Designing Gaussian-output recurrent networks to model demand uncertainty at scale.</p>
+        </article>
+        <article>
+          <span class="dot" aria-hidden="true"></span>
+          <h3>AI for Grid Operations</h3>
+          <p>Applying data-driven methods to improve planning and reliability in energy systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="panel section-projects">
+      <h2>Featured Projects</h2>
+      <div class="card-grid">
+        <article class="card">
+          <p class="card-tag">Machine Learning</p>
+          <h3>Wind Power Forecasting Suite</h3>
+          <p>Built comparison pipelines for LSTM, SVR, and hybrid models across multiple prediction horizons.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">Energy Analytics</p>
+          <h3>Probabilistic Load Estimator</h3>
+          <p>Implemented sequence models that return distribution-aware forecasts instead of single-point outputs.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">Embedded Systems</p>
+          <h3>Engineering Tooling</h3>
+          <p>Prototyped ESP32 + Python workflows for instrumentation, analysis, and iterative experimentation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="panel section-contact">
       <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
-      <p>GitHub: github.com/yourusername</p>
-      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <p>Open to research collaborations, internships, and engineering opportunities.</p>
+      <div class="contact-links">
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+      </div>
     </section>
   </main>
 
