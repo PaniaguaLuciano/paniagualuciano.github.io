@@ -64,6 +64,22 @@
         .replaceAll("'", "&#39;");
     }
 
+    function getPresentationLabel(doc) {
+      if (!doc.presentationDate) {
+        return "Presentation date";
+      }
+
+      const eventDate = new Date(`${doc.presentationDate}T00:00:00`);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (Number.isNaN(eventDate.getTime())) {
+        return "Presentation date";
+      }
+
+      return eventDate > today ? "Will present on" : "Presented on";
+    }
+
     if (!docs.length) {
       container.innerHTML = `
         <article class="doc-entry">
@@ -84,11 +100,10 @@
           <div class="doc-stats">
             <p class="doc-chip"><strong>Presented at:</strong> ${escapeHtml(doc.conference || "Conference not set")}</p>
             <p class="doc-chip"><strong>Location:</strong> ${escapeHtml(doc.location || "Location not set")}</p>
-            <p class="doc-chip"><strong>Presented on:</strong> ${escapeHtml(doc.presentationDateLabel || "Date not set")}</p>
+            <p class="doc-chip"><strong>${escapeHtml(getPresentationLabel(doc))}:</strong> ${escapeHtml(doc.presentationDateLabel || "Date not set")}</p>
           </div>
           <div class="doc-story">
             <p><strong>Abstract:</strong> ${escapeHtml(doc.abstract || "Abstract not found in PDF.")}</p>
-            <p><strong>File:</strong> ${escapeHtml(doc.filename || "")}</p>
           </div>
           <div class="doc-actions">
             <a class="btn btn-primary" href="docs/${escapeHtml(doc.filename || "")}" target="_blank" rel="noopener noreferrer">View PDF</a>
