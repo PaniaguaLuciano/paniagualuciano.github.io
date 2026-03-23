@@ -224,3 +224,60 @@ footer {
     gap: 0.75rem;
   }
 }
+
+.inline-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #d4d4d8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inline-link:hover {
+  color: var(--text);
+}
+
+.hero-compact {
+  padding-bottom: 1.5rem;
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.doc-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem;
+  background: var(--surface-2);
+}
+
+.doc-card h3 {
+  font-size: 1.03rem;
+  margin-bottom: 0.25rem;
+}
+
+.doc-card p,
+.section-note {
+  color: var(--muted);
+}
+
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.section-note {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+}
