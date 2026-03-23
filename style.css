@@ -259,6 +259,79 @@ footer {
   margin-bottom: 0.25rem;
 }
 
+.doc-portfolio {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.doc-entry {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(1rem, 2.5vw, 1.2rem);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.doc-meta h3 {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  margin: 0.2rem 0 0.35rem;
+}
+
+.doc-meta > p {
+  color: #d4d4d8;
+}
+
+.doc-tag {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e4e4e7;
+}
+
+.doc-story {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.doc-story p {
+  color: #d4d4d8;
+}
+
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.doc-bg-wind {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.2), transparent 40%),
+    linear-gradient(140deg, #0f172a, #0b1120 55%, #111827);
+}
+
+.doc-bg-load {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.16), transparent 36%),
+    linear-gradient(145deg, #1f2937, #111827 55%, #172554);
+}
+
+.doc-bg-notes {
+  background:
+    radial-gradient(circle at 12% 80%, rgba(52, 211, 153, 0.18), transparent 42%),
+    linear-gradient(145deg, #052e2b, #0f172a 52%, #1f2937);
+}
+
+.section-note {
+  margin-top: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .doc-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .doc-card p,
 .section-note {
   color: var(--muted);

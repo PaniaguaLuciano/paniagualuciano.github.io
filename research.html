@@ -25,35 +25,67 @@
   <main class="container">
     <section class="hero hero-compact">
       <p class="eyebrow">Research Library</p>
-      <h1>PDF Documents</h1>
-      <p class="lead">Browse papers, reports, and research notes. Each item can be viewed in-browser or downloaded.</p>
+      <h1>Research Portfolio</h1>
+      <p class="lead">A curated set of technical documents with context, methods, outcomes, and downloadable PDFs.</p>
     </section>
 
     <section class="section">
-      <h2>Available Documents</h2>
-      <div class="doc-grid">
-        <article class="doc-card">
-          <h3>Wind Forecasting Report</h3>
-          <p>Detailed workflow and results for multi-horizon wind prediction experiments.</p>
+      <h2>Featured Documents</h2>
+      <div class="doc-portfolio">
+        <article class="doc-entry doc-bg-wind">
+          <div class="doc-meta">
+            <p class="doc-tag">Energy Systems • Forecasting</p>
+            <h3>Wind Forecasting Report</h3>
+            <p>Multi-horizon wind power prediction using feature engineering, temporal cross-validation, and robust error tracking.</p>
+          </div>
+          <div class="doc-story">
+            <p><strong>Background:</strong> Designed to support operational planning for variable renewable generation.</p>
+            <p><strong>Highlights:</strong> Compared baseline statistical models against boosted-tree and recurrent architectures.</p>
+            <p><strong>Outcome:</strong> Improved short-term forecast reliability and reduced peak-hour error exposure.</p>
+          </div>
           <div class="doc-actions">
             <a class="btn btn-primary" href="docs/wind-forecasting-report.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn btn-ghost" href="docs/wind-forecasting-report.pdf" download>Download</a>
+            <a class="btn btn-ghost" href="docs/wind-forecasting-report.pdf" download>Download PDF</a>
           </div>
         </article>
 
-        <article class="doc-card">
-          <h3>Probabilistic Load Forecasting</h3>
-          <p>Model setup, uncertainty quantification methods, and benchmark results.</p>
+        <article class="doc-entry doc-bg-load">
+          <div class="doc-meta">
+            <p class="doc-tag">Grid Analytics • Uncertainty</p>
+            <h3>Probabilistic Load Forecasting</h3>
+            <p>End-to-end methodology for interval forecasting with calibrated uncertainty bands and scenario testing.</p>
+          </div>
+          <div class="doc-story">
+            <p><strong>Background:</strong> Built to quantify demand uncertainty for day-ahead scheduling decisions.</p>
+            <p><strong>Highlights:</strong> Evaluated quantile regression and distributional approaches under seasonal shifts.</p>
+            <p><strong>Outcome:</strong> Produced tighter predictive intervals while preserving target coverage rates.</p>
+          </div>
           <div class="doc-actions">
             <a class="btn btn-primary" href="docs/probabilistic-load-forecasting.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn btn-ghost" href="docs/probabilistic-load-forecasting.pdf" download>Download</a>
+            <a class="btn btn-ghost" href="docs/probabilistic-load-forecasting.pdf" download>Download PDF</a>
+          </div>
+        </article>
+
+        <article class="doc-entry doc-bg-notes">
+          <div class="doc-meta">
+            <p class="doc-tag">Method Notes • Experiments</p>
+            <h3>Research Methods Notebook</h3>
+            <p>Experimental protocols, ablation notes, and reproducibility checklist across forecasting projects.</p>
+          </div>
+          <div class="doc-story">
+            <p><strong>Background:</strong> Created as a transparent record for model iteration and validation choices.</p>
+            <p><strong>Highlights:</strong> Documents data cleaning rules, feature lineage, and evaluation guardrails.</p>
+            <p><strong>Outcome:</strong> Strengthened reproducibility and accelerated handoff for collaborators.</p>
+          </div>
+          <div class="doc-actions">
+            <a class="btn btn-primary" href="docs/research-methods-notebook.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
+            <a class="btn btn-ghost" href="docs/research-methods-notebook.pdf" download>Download PDF</a>
           </div>
         </article>
       </div>
 
       <p class="section-note">
-        If a link returns 404, add your PDF files to the docs folder in this repo with matching names,
-        or update these links to your exact file paths.
+        Add your PDF files to `docs/` with the same filenames used above. If your filenames differ, update each link accordingly.
       </p>
     </section>
   </main>
