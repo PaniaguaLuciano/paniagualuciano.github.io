@@ -77,6 +77,15 @@
       return eventDate > today ? "Will present on" : "Presented on";
     }
 
+    function getDocAnchorId(doc) {
+      const raw = doc.filename || doc.title || "paper";
+      return `paper-${raw
+        .toLowerCase()
+        .replace(/\.pdf$/i, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")}`;
+    }
+
     if (!docs.length) {
       container.innerHTML = `
         <article class="doc-entry">
@@ -89,7 +98,7 @@
       `;
     } else {
       container.innerHTML = docs.map((doc) => `
-        <article class="doc-entry ${escapeHtml(doc.themeClass || "")}">
+        <article id="${escapeHtml(getDocAnchorId(doc))}" class="doc-entry ${escapeHtml(doc.themeClass || "")}">
           <div class="doc-meta">
             <p class="doc-tag">${escapeHtml((doc.tags || []).join(" • ") || "Research Document")}</p>
             <h3>${escapeHtml(doc.title || "Untitled Document")}</h3>

@@ -237,6 +237,15 @@ footer {
   color: var(--text);
 }
 
+.doc-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.doc-title-link:hover {
+  text-decoration: underline;
+}
+
 .hero-compact {
   padding-bottom: 1.5rem;
 }
@@ -346,6 +355,24 @@ footer {
 }
 
 .doc-bg-notes {
+  background:
+    radial-gradient(circle at 12% 80%, rgba(52, 211, 153, 0.18), transparent 42%),
+    linear-gradient(145deg, #052e2b, #0f172a 52%, #1f2937);
+}
+
+.list article.doc-bg-wind {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.2), transparent 40%),
+    linear-gradient(140deg, #0f172a, #0b1120 55%, #111827);
+}
+
+.list article.doc-bg-load {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.16), transparent 36%),
+    linear-gradient(145deg, #1f2937, #111827 55%, #172554);
+}
+
+.list article.doc-bg-notes {
   background:
     radial-gradient(circle at 12% 80%, rgba(52, 211, 153, 0.18), transparent 42%),
     linear-gradient(145deg, #052e2b, #0f172a 52%, #1f2937);
