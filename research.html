@@ -98,7 +98,7 @@
       `;
     } else {
       container.innerHTML = docs.map((doc) => `
-        <article id="${escapeHtml(getDocAnchorId(doc))}" class="doc-entry ${escapeHtml(doc.themeClass || "")}">
+        <section id="${escapeHtml(getDocAnchorId(doc))}" class="doc-entry ${escapeHtml(doc.themeClass || "")}">
           <div class="doc-meta">
             <p class="doc-tag">${escapeHtml((doc.tags || []).join(" • ") || "Research Document")}</p>
             <h3>${escapeHtml(doc.title || "Untitled Document")}</h3>
@@ -115,8 +115,15 @@
             <a class="btn btn-primary" href="docs/${escapeHtml(doc.filename || "")}" target="_blank" rel="noopener noreferrer">View PDF</a>
             <a class="btn btn-ghost" href="docs/${escapeHtml(doc.filename || "")}" download>Download PDF</a>
           </div>
-        </article>
+        </section>
       `).join("");
+
+      if (window.location.hash) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target) {
+          target.scrollIntoView({ block: "start" });
+        }
+      }
     }
   </script>
 </body>
