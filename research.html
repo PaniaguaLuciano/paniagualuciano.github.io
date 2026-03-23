@@ -16,6 +16,7 @@
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
         <li><a href="research.html">Research</a></li>
+        <li class="nav-resume"><a href="index.html#resume">Resume / CV</a></li>
         <li><a href="index.html#projects">Projects</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
@@ -78,12 +79,11 @@
     }
 
     function getDocAnchorId(doc) {
+      if (doc.anchorId) {
+        return doc.anchorId;
+      }
       const raw = doc.filename || doc.title || "paper";
-      return `paper-${raw
-        .toLowerCase()
-        .replace(/\.pdf$/i, "")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "")}`;
+      return `paper-${raw.toLowerCase().replace(/\.pdf$/i, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}`;
     }
 
     if (!docs.length) {

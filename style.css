@@ -71,6 +71,18 @@ body {
   color: var(--text);
 }
 
+.nav-resume a {
+  color: var(--text);
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  padding: 0.28rem 0.72rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-resume a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .hero {
   padding: clamp(3.2rem, 9vw, 7rem) 0 2.3rem;
   border-bottom: 1px solid var(--border);
@@ -146,6 +158,12 @@ h1 {
 
 .section > p {
   color: var(--muted);
+}
+
+.resume-section {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(34, 211, 238, 0.18), transparent 38%),
+    linear-gradient(130deg, #0f172a, #111827 60%, #0b0b0b);
 }
 
 .list {

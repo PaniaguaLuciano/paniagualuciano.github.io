@@ -13,6 +13,7 @@ const researchDocs = [
     "location": "Santa Ana, California, USA",
     "presentationDate": "2026-04-19",
     "presentationDateLabel": "Apr 19, 2026",
+    "anchorId": "paper-sustech-2026",
     "themeClass": "doc-bg-notes"
   },
   {
@@ -29,6 +30,7 @@ const researchDocs = [
     "location": "Boulder, Colorado, USA",
     "presentationDate": "2026-03-25",
     "presentationDateLabel": "Mar 25, 2026",
+    "anchorId": "paper-greentech-2026",
     "themeClass": "doc-bg-wind"
   },
   {
@@ -45,6 +47,7 @@ const researchDocs = [
     "location": "Hartford, Connecticut, USA",
     "presentationDate": "2025-10-26",
     "presentationDateLabel": "Oct 26, 2025",
+    "anchorId": "paper-naps-2025",
     "themeClass": "doc-bg-load"
   }
 ];

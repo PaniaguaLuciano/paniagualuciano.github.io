@@ -13,16 +13,19 @@ const CONFERENCE_METADATA = {
     conference: "IEEE Green Technologies Conference (GreenTech)",
     presentationDate: "2026-03-25",
     location: "Boulder, Colorado, USA",
+    anchorId: "paper-greentech-2026",
   },
   "Paniagua_NAPS2025_Paper.pdf": {
     conference: "IEEE North American Power Symposium (NAPS)",
     presentationDate: "2025-10-26",
     location: "Hartford, Connecticut, USA",
+    anchorId: "paper-naps-2025",
   },
   "SusTech2026_Luciano_C3_ASPIRE_OAC_CREPES_01_10_26[FINAL].pdf": {
     conference: "IEEE Conference on Technologies for Sustainability (SusTech)",
     presentationDate: "2026-04-19",
     location: "Santa Ana, California, USA",
+    anchorId: "paper-sustech-2026",
   },
 };
 
@@ -170,6 +173,7 @@ async function parsePdf(filename, index) {
     location: metadata.location || "Location not set",
     presentationDate: metadata.presentationDate || "",
     presentationDateLabel: formatDate(metadata.presentationDate || ""),
+    anchorId: metadata.anchorId || slugify(filename.replace(/\.pdf$/i, "")),
     themeClass: pickTheme(tags, index),
   };
 }
