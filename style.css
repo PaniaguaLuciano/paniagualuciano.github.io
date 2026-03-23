@@ -281,6 +281,26 @@ footer {
   color: #d4d4d8;
 }
 
+.doc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.doc-chip {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e4e4e7;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 0.26rem 0.65rem;
+}
+
+.doc-chip strong {
+  color: #ffffff;
+}
+
 .doc-tag {
   font-size: 0.78rem;
   text-transform: uppercase;

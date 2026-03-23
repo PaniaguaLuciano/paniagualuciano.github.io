@@ -8,6 +8,23 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const docsDir = path.join(rootDir, "docs");
 const outputPath = path.join(rootDir, "research-documents.js");
+const CONFERENCE_METADATA = {
+  "GreenTech2026_LucianoPaniagua.pdf": {
+    conference: "IEEE Green Technologies Conference (GreenTech)",
+    presentationDate: "2026-03-25",
+    location: "Boulder, Colorado, USA",
+  },
+  "Paniagua_NAPS2025_Paper.pdf": {
+    conference: "IEEE North American Power Symposium (NAPS)",
+    presentationDate: "2025-10-26",
+    location: "Hartford, Connecticut, USA",
+  },
+  "SusTech2026_Luciano_C3_ASPIRE_OAC_CREPES_01_10_26[FINAL].pdf": {
+    conference: "IEEE Conference on Technologies for Sustainability (SusTech)",
+    presentationDate: "2026-04-19",
+    location: "Santa Ana, California, USA",
+  },
+};
 
 function cleanWhitespace(value) {
   return value
@@ -93,29 +110,21 @@ function extractKeywords(text) {
     .slice(0, 3);
 }
 
-function buildSummary(abstract) {
-  if (!abstract) {
-    return "Technical paper available for download.";
+function formatDate(isoDate) {
+  if (!isoDate) {
+    return "Date not set";
   }
 
-  const sentences = abstract
-    .split(/(?<=[.!?])\s+/)
-    .map((item) => item.trim())
-    .filter(Boolean);
-
-  const selected = [];
-  let length = 0;
-
-  for (const sentence of sentences) {
-    if (selected.length === 2 || length + sentence.length > 360) {
-      break;
-    }
-
-    selected.push(sentence);
-    length += sentence.length;
+  const date = new Date(`${isoDate}T00:00:00`);
+  if (Number.isNaN(date.getTime())) {
+    return "Date not set";
   }
 
-  return selected.join(" ") || abstract.slice(0, 320);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
 }
 
 function pickTheme(tags, index) {
@@ -144,7 +153,7 @@ async function parsePdf(filename, index) {
   const title = extractTitle(lines, filename);
   const abstract = extractAbstract(result.text);
   const tags = extractKeywords(result.text);
-  const summary = buildSummary(abstract);
+  const metadata = CONFERENCE_METADATA[filename] || {};
   const slug = slugify(title) || slugify(filename.replace(/\.pdf$/i, ""));
   const targetFilename = `${slug}.pdf`;
   const targetPath = path.join(docsDir, targetFilename);
@@ -153,11 +162,14 @@ async function parsePdf(filename, index) {
 
   return {
     title,
-    summary,
     abstract,
     tags,
     filename: targetFilename,
     sourceFilename: filename,
+    conference: metadata.conference || "Conference not set",
+    location: metadata.location || "Location not set",
+    presentationDate: metadata.presentationDate || "",
+    presentationDateLabel: formatDate(metadata.presentationDate || ""),
     themeClass: pickTheme(tags, index),
   };
 }
@@ -176,6 +188,14 @@ async function main() {
   for (const [index, filename] of pdfFiles.entries()) {
     documents.push(await parsePdf(filename, index));
   }
+  documents.sort((a, b) => {
+    const timeA = a.presentationDate ? new Date(`${a.presentationDate}T00:00:00`).getTime() : 0;
+    const timeB = b.presentationDate ? new Date(`${b.presentationDate}T00:00:00`).getTime() : 0;
+    if (timeA !== timeB) {
+      return timeB - timeA;
+    }
+    return (a.conference || "").localeCompare(b.conference || "");
+  });
 
   const serialized = JSON.stringify(documents, null, 2);
   const output = `const researchDocs = ${serialized};\nif (typeof window !== "undefined") {\n  window.RESEARCH_DOCS = researchDocs;\n}\nif (typeof module !== "undefined") {\n  module.exports = researchDocs;\n}\n`;

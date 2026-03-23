@@ -26,7 +26,7 @@
     <section class="hero hero-compact">
       <p class="eyebrow">Research Library</p>
       <h1>Research Portfolio</h1>
-      <p class="lead">A curated set of technical documents with context, methods, outcomes, and downloadable PDFs.</p>
+      <p class="lead">A curated set of presented papers, sorted by presentation date and conference, with direct PDF access.</p>
     </section>
 
     <section class="section">
@@ -42,7 +42,7 @@
       </div>
 
       <p class="section-note">
-        Drop PDF files in the project root, then run <code>npm run build:research</code> to refresh titles, summaries, and clean download filenames.
+        Drop PDF files in the project root, then run <code>npm run build:research</code> to refresh titles, conference location metadata, and presentation-date sorting.
       </p>
     </section>
   </main>
@@ -80,10 +80,14 @@
           <div class="doc-meta">
             <p class="doc-tag">${escapeHtml((doc.tags || []).join(" • ") || "Research Document")}</p>
             <h3>${escapeHtml(doc.title || "Untitled Document")}</h3>
-            <p>${escapeHtml(doc.summary || "Technical paper available for download.")}</p>
+          </div>
+          <div class="doc-stats">
+            <p class="doc-chip"><strong>Presented at:</strong> ${escapeHtml(doc.conference || "Conference not set")}</p>
+            <p class="doc-chip"><strong>Location:</strong> ${escapeHtml(doc.location || "Location not set")}</p>
+            <p class="doc-chip"><strong>Presented on:</strong> ${escapeHtml(doc.presentationDateLabel || "Date not set")}</p>
           </div>
           <div class="doc-story">
-            <p><strong>Abstract:</strong> ${escapeHtml(doc.abstract || doc.summary || "")}</p>
+            <p><strong>Abstract:</strong> ${escapeHtml(doc.abstract || "Abstract not found in PDF.")}</p>
             <p><strong>File:</strong> ${escapeHtml(doc.filename || "")}</p>
           </div>
           <div class="doc-actions">
