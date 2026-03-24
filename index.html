@@ -15,7 +15,7 @@
       <a class="brand" href="#top">Luciano A. Paniagua</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="research.html">Research</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#resume">Resume / CV</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -108,9 +108,12 @@
   </footer>
   <script>
     const navHashLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-    const sectionIds = navHashLinks.map((link) => link.getAttribute("href").slice(1));
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
+    const navSections = navHashLinks
+      .map((link) => {
+        const hash = link.getAttribute("href");
+        const section = document.getElementById(hash.slice(1));
+        return section ? { hash, section } : null;
+      })
       .filter(Boolean);
 
     function setActiveNav(hash) {
@@ -119,30 +122,35 @@
       });
     }
 
+    function updateActiveFromScroll() {
+      const marker = window.scrollY + 120;
+      let activeHash = navSections[0]?.hash || "";
+
+      for (const item of navSections) {
+        if (item.section.offsetTop <= marker) {
+          activeHash = item.hash;
+        }
+      }
+
+      if (activeHash) {
+        setActiveNav(activeHash);
+      }
+    }
+
     navHashLinks.forEach((link) => {
       link.addEventListener("click", () => {
         setActiveNav(link.getAttribute("href"));
       });
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible) {
-        setActiveNav(`#${visible.target.id}`);
-      }
-    }, {
-      threshold: 0.35,
-      rootMargin: "-72px 0px -50% 0px",
-    });
-
-    sections.forEach((section) => observer.observe(section));
-
-    if (window.location.hash && sectionIds.includes(window.location.hash.slice(1))) {
+    if (window.location.hash && navSections.some((item) => item.hash === window.location.hash)) {
       setActiveNav(window.location.hash);
+    } else {
+      updateActiveFromScroll();
     }
+
+    window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
+    window.addEventListener("hashchange", updateActiveFromScroll);
   </script>
 </body>
 </html>
