@@ -77,21 +77,6 @@ body {
   border-radius: 999px;
   padding: 0.28rem 0.72rem;
   background: rgba(255, 255, 255, 0.04);
-  opacity: 0;
-  transform: translateY(-4px) scale(0.97);
-  pointer-events: none;
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease,
-    background 180ms ease;
-}
-
-.nav:hover .nav-resume a,
-.nav:focus-within .nav-resume a,
-.nav-resume a:focus-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
 }
 
 .nav-resume a:hover {
@@ -255,12 +240,6 @@ footer {
 
   .nav-links {
     gap: 0.75rem;
-  }
-
-  .nav-resume a {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
   }
 }
 
