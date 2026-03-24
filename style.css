@@ -64,22 +64,26 @@ body {
   text-decoration: none;
   color: var(--muted);
   font-weight: 500;
-  transition: color 180ms ease;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-resume a {
-  color: var(--text);
-  border: 1px solid #3a3a3a;
-  border-radius: 999px;
   padding: 0.28rem 0.72rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a.is-active,
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+  border-color: #3a3a3a;
   background: rgba(255, 255, 255, 0.04);
 }
 
-.nav-resume a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   background: rgba(255, 255, 255, 0.1);
 }
 
