@@ -88,7 +88,7 @@ body {
 }
 
 .hero {
-  padding: clamp(3.2rem, 9vw, 7rem) 0 2.3rem;
+  padding: clamp(1.25rem, 4.5vw, 2.6rem) 0 2.1rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -350,7 +350,8 @@ footer {
 }
 
 .hero-compact {
-  padding-bottom: 1.5rem;
+  padding-top: clamp(1rem, 3.2vw, 1.8rem);
+  padding-bottom: 1.35rem;
 }
 
 .doc-grid {
