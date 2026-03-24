@@ -170,6 +170,15 @@ h1 {
     linear-gradient(130deg, #0f172a, #111827 60%, #0b0b0b);
 }
 
+.pdf-viewer {
+  width: 100%;
+  min-height: 72vh;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: #0a0a0a;
+  margin-top: 0.8rem;
+}
+
 .list {
   display: grid;
   gap: 0.7rem;
