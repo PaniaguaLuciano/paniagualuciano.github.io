@@ -198,8 +198,8 @@ h1 {
 
 .resume-section {
   background:
-    radial-gradient(circle at 16% 18%, rgba(255, 125, 60, 0.2), transparent 42%),
-    linear-gradient(132deg, #3f1b17, #6f2b1d 56%, #4d3320);
+    radial-gradient(circle at 18% 16%, rgba(121, 74, 42, 0.28), transparent 46%),
+    linear-gradient(132deg, #24170f, #3a2618 54%, #2e2317);
 }
 
 .wip-section {
