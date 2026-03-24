@@ -193,6 +193,12 @@ h1 {
     linear-gradient(130deg, #0f172a, #111827 60%, #0b0b0b);
 }
 
+.wip-section {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(251, 191, 36, 0.15), transparent 40%),
+    linear-gradient(135deg, #111827, #0b1220 55%, #0a0a0a);
+}
+
 .pdf-viewer {
   width: 100%;
   min-height: 72vh;
