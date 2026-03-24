@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume / CV | Luciano A. Paniagua</title>
+  <title>Resume | Luciano A. Paniagua</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="resume.html" aria-current="page">Resume / CV</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -25,7 +25,7 @@
 
   <main class="container">
     <section class="hero hero-compact">
-      <p class="eyebrow">Resume / CV</p>
+      <p class="eyebrow">Resume</p>
       <h1>Professional Summary</h1>
       <p class="lead">My resume and CV profile page with direct links to professional information.</p>
       <div class="hero-actions">
@@ -35,8 +35,8 @@
     </section>
 
     <section class="section resume-section">
-      <h2>Resume / CV</h2>
-      <p>This page serves as the dedicated Resume / CV destination from your landing-page buttons and nav.</p>
+      <h2>Resume</h2>
+      <p>This page serves as the dedicated Resume destination from your landing-page buttons and nav.</p>
     </section>
 
     <section id="contact" class="section">
@@ -53,5 +53,19 @@
   <footer class="container">
     <p>© 2026 Luciano A. Paniagua</p>
   </footer>
+  <script>
+    function triggerContactShake() {
+      const contact = document.getElementById("contact");
+      if (!contact) return;
+      contact.classList.remove("contact-shake");
+      void contact.offsetWidth;
+      contact.classList.add("contact-shake");
+      setTimeout(() => contact.classList.remove("contact-shake"), 420);
+    }
+
+    document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+      link.addEventListener("click", triggerContactShake);
+    });
+  </script>
 </body>
 </html>

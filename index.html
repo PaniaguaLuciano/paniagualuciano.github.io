@@ -16,7 +16,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="resume.html">Resume / CV</a></li>
+        <li><a href="resume.html">Resume</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -32,7 +32,7 @@
         with a focus on reliability, uncertainty, and measurable outcomes.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="resume.html">Resume / CV</a>
+        <a class="btn btn-primary" href="resume.html">Resume</a>
         <a class="btn btn-ghost" href="research.html">Research</a>
         <a class="btn btn-ghost" href="projects.html">Projects</a>
       </div>
@@ -125,6 +125,19 @@
 
     window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
     window.addEventListener("hashchange", updateActiveFromScroll);
+
+    function triggerContactShake() {
+      const contact = document.getElementById("contact");
+      if (!contact) return;
+      contact.classList.remove("contact-shake");
+      void contact.offsetWidth;
+      contact.classList.add("contact-shake");
+      setTimeout(() => contact.classList.remove("contact-shake"), 420);
+    }
+
+    document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+      link.addEventListener("click", triggerContactShake);
+    });
   </script>
 </body>
 </html>
