@@ -198,9 +198,9 @@ h1 {
 
 .resume-section {
   background:
-    radial-gradient(circle at 14% 18%, rgba(214, 127, 74, 0.24), transparent 42%),
-    radial-gradient(circle at 84% 78%, rgba(128, 82, 52, 0.2), transparent 44%),
-    linear-gradient(142deg, #201611, #3b271c 52%, #2a2019);
+    radial-gradient(circle at 14% 18%, rgba(56, 189, 248, 0.18), transparent 42%),
+    radial-gradient(circle at 84% 78%, rgba(148, 163, 184, 0.14), transparent 44%),
+    linear-gradient(142deg, #111827, #0f172a 52%, #0a0f1f);
 }
 
 .wip-section {
