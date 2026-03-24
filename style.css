@@ -171,6 +171,15 @@ h1 {
   align-items: center;
 }
 
+.about-grid p {
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.about-grid p:last-child {
+  margin-bottom: 0;
+}
+
 .about-photo-wrap {
   margin: 0;
   border-radius: 14px;
